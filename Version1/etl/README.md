@@ -40,4 +40,4 @@ No staging load procedure, SSIS package, or SQL Agent job was found. Table defin
 
 ## Power BI / SSIS
 
-This Version 1 repository does not include `.dtsx` packages.
+Version 1 does not include `.dtsx` packages.

@@ -34,16 +34,16 @@ Power BI Dashboards & KPIs
 
 ```text
 AdventureWorks2022
-        ↓
-EnterpriseData_Staging (stg.*)     ← eight selected source tables
-        ↓
-AdventureWorks2022                 ← warehouse load reads the operational database
-        ↓
-EnterpriseData_DW (dw.* + audit.*)
-        ↓
-semantic.* views
-        ↓
-Power BI (consumer of semantic views; no report file in this repository)
+        │
+        ├──► EnterpriseData_Staging (stg.*)     ← eight selected source tables
+        │
+        └──► warehouse load reads the operational database
+                    ↓
+            EnterpriseData_DW (dw.* + audit.*)
+                    ↓
+            semantic.* views
+                    ↓
+            Power BI (consumer of semantic views; no report file in this repository)
 ```
 
 Version 1 warehouse ETL (`etl/04_etl_load.sql`) loads dimensions and facts from **AdventureWorks2022**. It does not `SELECT` from `EnterpriseData_Staging`. Staging exists as a landing copy of the eight selected sales/product/customer tables.

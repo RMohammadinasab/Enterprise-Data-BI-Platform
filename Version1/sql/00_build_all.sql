@@ -1,5 +1,5 @@
 -- Rebuild EnterpriseData_DW from this repository.
--- Run from the repository root:
+-- Run from the Version1 folder:
 --   sqlcmd -S .\SQL2022 -E -i sql\00_build_all.sql
 -- AdventureWorks2022 must already exist on the instance.
 -- Staging (EnterpriseData_Staging) is a separate database; see sql\staging.

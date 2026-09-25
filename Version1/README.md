@@ -2,7 +2,7 @@
 
 SQL Server dimensional warehouse and semantic layer for a fictional multi-region manufacturer/distributor. **AdventureWorks2022** is the operational source dataset for this portfolio implementation.
 
-This repository is Version 1 only: staging copies of selected source tables, a star-schema warehouse, six BI views, and the T-SQL full load that populated the warehouse.
+Version 1 contains staging copies of selected source tables, a star-schema warehouse, six BI views, and the T-SQL full load that populated the warehouse.
 
 ## Business problem
 
@@ -23,14 +23,16 @@ Each question is implemented as one view in schema `semantic` (see [docs/busines
 
 ```text
 AdventureWorks2022
-        ↓
-Staging (EnterpriseData_Staging.stg)
-        ↓
-Enterprise Data Warehouse (EnterpriseData_DW.dw)
-        ↓
-Semantic / BI Layer (EnterpriseData_DW.semantic)
-        ↓
-Power BI (views as the contract; no .pbix in this repo)
+        │
+        ├──► EnterpriseData_Staging (stg.*)     ← eight selected source tables
+        │
+        └──► warehouse load reads the operational database
+                    ↓
+            EnterpriseData_DW (dw.* + audit.*)
+                    ↓
+            semantic.* views
+                    ↓
+            Power BI (consumer of semantic views; no report file in this repository)
 ```
 
 Warehouse load in Version 1 reads **AdventureWorks2022** via `etl/04_etl_load.sql`. Staging holds the eight selected source tables but is not referenced by that load script. Details: [docs/architecture.md](docs/architecture.md).
@@ -80,7 +82,7 @@ Surrogate keys on dimensions except `DimDate` (`DateKey` = `yyyyMMdd`). Fact-to-
 - AdventureWorks2022 sample database
 - Power BI as the intended reporting tool against `semantic` views
 
-This Version 1 repository does not include cloud services, SSIS packages, or a Power BI report file.
+Version 1 does not include cloud services, SSIS packages, or a Power BI report file.
 
 ## Folder structure
 
