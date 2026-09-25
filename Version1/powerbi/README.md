@@ -7,7 +7,7 @@ The BI contract for Version 1 is the `semantic` schema on `EnterpriseData_DW`.
 | `semantic.vw_ProductProfitability` | Which products are more profitable? |
 | `semantic.vw_TerritorySalesTrend` | Which regions are growing or declining in sales? |
 | `semantic.vw_SalesActualVsTarget` | How do actual sales compare with targets? |
-| `semantic.vw_CustomerChurnRisk` | Which customers are at risk of being lost? |
+| `semantic.vw_CustomerChurnRisk` | Which customers show indicators of churn risk? |
 | `semantic.vw_InventoryStatus` | What is the current inventory status? |
 | `semantic.vw_OperationalRisk` | Which products or customers have higher operational risk? |
 

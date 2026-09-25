@@ -11,7 +11,7 @@ Intended sources for those dashboards are the Version 1 semantic views on `Enter
 | Which products are more profitable? | `semantic.vw_ProductProfitability` |
 | Which regions are growing or declining in sales? | `semantic.vw_TerritorySalesTrend` |
 | How do actual sales compare with targets? | `semantic.vw_SalesActualVsTarget` |
-| Which customers are at risk of being lost? | `semantic.vw_CustomerChurnRisk` |
+| Which customers show indicators of churn risk? | `semantic.vw_CustomerChurnRisk` |
 | What is the current inventory status? | `semantic.vw_InventoryStatus` |
 | Which products or customers have higher operational risk? | `semantic.vw_OperationalRisk` |
 

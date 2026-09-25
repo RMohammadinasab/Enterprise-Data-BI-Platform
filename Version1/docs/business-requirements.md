@@ -17,7 +17,7 @@ Version 1 answers exactly these six questions. Mapping is from the view definiti
 | 1 | Which products are more profitable? | `semantic.vw_ProductProfitability` — revenue, COGS, gross profit, gross margin %, profit rank |
 | 2 | Which regions are growing or declining in sales? | `semantic.vw_TerritorySalesTrend` — year-over-year revenue change and TrendStatus |
 | 3 | How do actual sales compare with targets? | `semantic.vw_SalesActualVsTarget` — actual vs quota, variance, attainment % |
-| 4 | Which customers are at risk of being lost? | `semantic.vw_CustomerChurnRisk` — recency, 12-month revenue comparison, ChurnRiskLevel |
+| 4 | Which customers show indicators of churn risk? | `semantic.vw_CustomerChurnRisk` — recency, 12-month revenue comparison, ChurnRiskLevel (rule-based; not a predictive model) |
 | 5 | What is the current inventory status? | `semantic.vw_InventoryStatus` — on-hand qty, value, days of supply, stock status, stock risk score |
 | 6 | Which products or customers have higher operational risk? | `semantic.vw_OperationalRisk` — scored product and customer rows |
 

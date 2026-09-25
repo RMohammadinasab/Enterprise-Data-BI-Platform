@@ -3,7 +3,7 @@
 ## Conceptual flow
 
 ```text
-ERP / Operational DB
+Operational DB
         │
         ├── Sales
         ├── Purchasing
@@ -54,7 +54,7 @@ No separate data-quality database objects (check constraints, DQ tables, or vali
 
 | Layer | Database / objects | Role in Version 1 |
 |-------|--------------------|-------------------|
-| Operational source | `AdventureWorks2022` | ERP-style sales, purchasing, inventory, production, and customer data. |
+| Operational source | `AdventureWorks2022` | Operational source containing sales, purchasing, inventory, production, and customer-related data. |
 | Staging | `EnterpriseData_Staging.stg` | Copies of Customer, Person, Product, ProductCategory, ProductSubcategory, SalesOrderDetail, SalesOrderHeader, SalesTerritory. No foreign keys. No load procedure found. |
 | Warehouse | `EnterpriseData_DW.dw` | Star schema: seven dimensions, four facts. Surrogate keys on dimensions (except `DimDate`, which uses `yyyyMMdd`). |
 | Audit | `EnterpriseData_DW.audit.LoadHistory` | One row per full load batch; Version 1 notes `Full load from 04_etl_load.sql`. |

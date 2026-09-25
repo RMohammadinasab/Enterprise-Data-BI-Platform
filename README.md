@@ -81,7 +81,7 @@ Version 1 answers exactly these six questions. Each is implemented as one view i
 | 1 | Which products are more profitable? | `semantic.vw_ProductProfitability` |
 | 2 | Which regions are growing or declining in sales? | `semantic.vw_TerritorySalesTrend` |
 | 3 | How do actual sales compare with targets? | `semantic.vw_SalesActualVsTarget` |
-| 4 | Which customers are at risk of being lost? | `semantic.vw_CustomerChurnRisk` |
+| 4 | Which customers show indicators of churn risk? | `semantic.vw_CustomerChurnRisk` |
 | 5 | What is the current inventory status? | `semantic.vw_InventoryStatus` |
 | 6 | Which products or customers have higher operational risk? | `semantic.vw_OperationalRisk` |
 
@@ -111,7 +111,7 @@ The same diagram and framing appear in [`Version1/README.md`](Version1/README.md
 
 | Layer | Database / objects | Role |
 |-------|--------------------|------|
-| Operational source | `AdventureWorks2022` | ERP-style sales, purchasing, inventory, production, and customer data. |
+| Operational source | `AdventureWorks2022` | Operational source containing sales, purchasing, inventory, production, and customer-related data. |
 | Staging | `EnterpriseData_Staging.stg` | Landing copies of eight selected source tables. The warehouse load does not read this database. |
 | Warehouse | `EnterpriseData_DW.dw` | Star schema: seven dimensions, four facts. |
 | Audit | `EnterpriseData_DW.audit.LoadHistory` | One row per full-load batch. |

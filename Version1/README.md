@@ -13,7 +13,7 @@ Sales, purchasing, inventory, production, and customer data sit in different ope
 1. Which products are more profitable?
 2. Which regions are growing or declining in sales?
 3. How do actual sales compare with targets?
-4. Which customers are at risk of being lost?
+4. Which customers show indicators of churn risk?
 5. What is the current inventory status?
 6. Which products or customers have higher operational risk?
 

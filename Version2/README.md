@@ -22,7 +22,7 @@ These are the questions Version 2 dashboards are intended to present:
 | 1 | Which products are more profitable? | `semantic.vw_ProductProfitability` |
 | 2 | Which regions are growing or declining in sales? | `semantic.vw_TerritorySalesTrend` |
 | 3 | How do actual sales compare with targets? | `semantic.vw_SalesActualVsTarget` |
-| 4 | Which customers are at risk of being lost? | `semantic.vw_CustomerChurnRisk` |
+| 4 | Which customers show indicators of churn risk? | `semantic.vw_CustomerChurnRisk` |
 | 5 | What is the current inventory status? | `semantic.vw_InventoryStatus` |
 | 6 | Which products or customers have higher operational risk? | `semantic.vw_OperationalRisk` |
 

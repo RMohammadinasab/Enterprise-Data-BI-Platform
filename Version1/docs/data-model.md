@@ -133,7 +133,7 @@ View SQL is in `sql/semantic/` and matches `sys.sql_modules` on the inspected da
 | `vw_ProductProfitability` | One row per product | Sum of units, revenue, COGS, gross profit; margin; `RANK` by gross profit. |
 | `vw_TerritorySalesTrend` | Territory × year-month | YoY same-month revenue; TrendStatus Growing (≥ +5%), Declining (≤ −5%), Stable, or New / No Prior Year. |
 | `vw_SalesActualVsTarget` | Territory × year-month | Actual from FactSales; target from FactSalesQuota summed by territory-month; variance and attainment. |
-| `vw_CustomerChurnRisk` | One row per customer | Recency vs max sales date; last-12 vs prior-12 revenue; ChurnRiskLevel High / Medium / Low (thresholds in the view). |
+| `vw_CustomerChurnRisk` | One row per customer | Recency vs max sales date; last-12 vs prior-12 revenue; ChurnRiskLevel High / Medium / Low (thresholds in the view; rule-based indicators, not a predictive model). |
 | `vw_InventoryStatus` | One row per inventory fact | StockRiskScore 100 / 75 / 50 / 10 from StockStatus. |
 | `vw_OperationalRisk` | Product rows UNION ALL customer rows | Product score from stock, days of supply, margin, revenue; customer score from churn level, lifetime revenue, YoY revenue direction. Shared column names on the union (`WorstStockStatus`, `MinDaysOfSupply`) are reused for customers (churn level and days since last order). |
 
