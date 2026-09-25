@@ -6,7 +6,7 @@ This is a **portfolio and documentation repository**. It contains T-SQL scripts 
 
 ## Supported versions
 
-Security-relevant corrections apply to the **version folders present in the default branch** of this repository. Today that is `Version1/`. Older or removed version folders, if any appear later, are best-effort only.
+Security-relevant corrections apply to the **version folders present in the default branch** of this repository (`Version1/` implemented; `Version2/` in progress). Older or removed version folders, if any appear later, are best-effort only.
 
 | Scope | Supported |
 | --- | --- |

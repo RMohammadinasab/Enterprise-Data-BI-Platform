@@ -42,13 +42,13 @@ Give a unified management view of the six Version 1 business questions (see [Bus
 
 ### Technical purpose
 
-Provide a rebuildable T-SQL star schema (seven dimensions, four facts), an audit load table, a semantic layer, and a documented full-load script that reads **AdventureWorks2022**. The root of this repository is a **version index**; Version 1’s complete structure and documentation live under [`Version1/`](Version1/).
+Provide a rebuildable T-SQL star schema (seven dimensions, four facts), an audit load table, a semantic layer, and a documented full-load script that reads **AdventureWorks2022**. The root of this repository is a **version index**; Version 1’s complete structure and documentation live under [`Version1/`](Version1/). Version 2 is **in progress** under [`Version2/`](Version2/) (SSIS data collection and Power BI dashboards for the same six questions).
 
 ---
 
 ## Features
 
-Version 1 (the only version in this repository) includes:
+Version 1 includes:
 
 - Staging copies of eight selected AdventureWorks tables in `EnterpriseData_Staging.stg`
 - Star-schema warehouse in `EnterpriseData_DW.dw` (seven dimensions, four facts)
@@ -63,13 +63,12 @@ Version 1 (the only version in this repository) includes:
 
 The repository is organized by version. **Each version folder is self-contained**: it holds its own documentation, SQL objects, and load scripts, so that version can be read and rebuilt on its own.
 
-There is currently **one** version:
+| Version | Status | Folder | Content |
+|---------|--------|--------|---------|
+| Version 1 | Complete (implemented) | [`Version1/`](Version1/) | Staging copies of eight selected source tables, a star-schema warehouse (7 dimensions, 4 facts), an audit load table, 6 semantic BI views, and the T-SQL full load that populated the warehouse. |
+| Version 2 | **In progress** | [`Version2/`](Version2/) | Planned: data collection with **SSIS**, and **Power BI dashboards** for the same six Version 1 business questions. No SSIS packages or Power BI report files are in the repository yet. |
 
-| Version | Folder | Content |
-|---------|--------|---------|
-| Version 1 | [`Version1/`](Version1/) | Staging copies of eight selected source tables, a star-schema warehouse (7 dimensions, 4 facts), an audit load table, 6 semantic BI views, and the T-SQL full load that populated the warehouse. |
-
-Open [`Version1/README.md`](Version1/README.md) for that version’s full overview.
+Open [`Version1/README.md`](Version1/README.md) for the implemented version. Open [`Version2/README.md`](Version2/README.md) for Version 2 scope and status.
 
 ---
 
@@ -117,7 +116,7 @@ The same diagram and framing appear in [`Version1/README.md`](Version1/README.md
 | Warehouse | `EnterpriseData_DW.dw` | Star schema: seven dimensions, four facts. |
 | Audit | `EnterpriseData_DW.audit.LoadHistory` | One row per full-load batch. |
 | Semantic | `EnterpriseData_DW.semantic` | Six views that answer the six Version 1 business questions. |
-| Presentation | Power BI | Intended consumer of `semantic` views. This repository has no `.pbix`. |
+| Presentation | Power BI | Version 1: intended consumer of `semantic` views (no `.pbix` in Version 1). Version 2 (in progress): dashboards for the six Version 1 questions. |
 
 ---
 
@@ -150,9 +149,10 @@ Grains, keys, and relationship notes: [`Version1/docs/data-model.md`](Version1/d
 | Database engine | Microsoft SQL Server (built and verified on a SQL Server 2022 instance; named instance `SQL2022` in the rebuild command) |
 | Implementation | T-SQL (DDL, views, full-load `INSERT`) |
 | Source dataset | AdventureWorks2022 |
-| Reporting | Power BI as the intended reporting tool against the `semantic` views |
+| Reporting | Power BI as the intended reporting tool against the `semantic` views (Version 2 dashboards: in progress) |
+| Integration (Version 2, in progress) | SQL Server Integration Services (SSIS) for data collection |
 
-**Not included:** cloud services, SSIS packages, or Power BI report files.
+**Not included today:** cloud services. Version 1 has no SSIS packages and no Power BI report file. Version 2 is in progress; those files have not been added yet.
 
 ---
 
@@ -166,12 +166,16 @@ Enterprise-Data-BI-Platform/
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── .github/
-└── Version1/
-    ├── README.md          ← Version 1 overview
-    ├── docs/              ← architecture, data model, business requirements
-    ├── sql/               ← staging, warehouse, semantic, validation
-    ├── etl/               ← full-load script and load documentation
-    └── powerbi/           ← semantic-layer / reporting notes
+├── Version1/
+│   ├── README.md          ← Version 1 overview (implemented)
+│   ├── docs/              ← architecture, data model, business requirements
+│   ├── sql/               ← staging, warehouse, semantic, validation
+│   ├── etl/               ← full-load script and load documentation
+│   └── powerbi/           ← semantic-layer / reporting notes
+└── Version2/              ← in progress
+    ├── README.md          ← Version 2 scope and status
+    ├── ssis/              ← SSIS packages (not added yet)
+    └── powerbi/           ← Power BI dashboards (not added yet)
 ```
 
 ---
@@ -214,7 +218,10 @@ Sample read-only checks against the semantic views: [`Version1/sql/validation/sa
 | Staging, warehouse, semantic, and validation SQL | [`Version1/sql/`](Version1/sql/) |
 | Warehouse rebuild entry point | [`Version1/sql/00_build_all.sql`](Version1/sql/00_build_all.sql) |
 | Load implementation | [`Version1/etl/`](Version1/etl/) |
-| BI / reporting notes | [`Version1/powerbi/`](Version1/powerbi/) |
+| BI / reporting notes (Version 1) | [`Version1/powerbi/`](Version1/powerbi/) |
+| Version 2 (in progress) | [`Version2/README.md`](Version2/README.md) |
+| Version 2 SSIS (planned folder) | [`Version2/ssis/`](Version2/ssis/) |
+| Version 2 Power BI (planned folder) | [`Version2/powerbi/`](Version2/powerbi/) |
 
 ---
 

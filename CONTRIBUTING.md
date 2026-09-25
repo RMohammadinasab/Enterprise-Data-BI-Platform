@@ -9,7 +9,7 @@ This repository is a Data Engineer / BI portfolio of **T-SQL scripts and Markdow
 1. Fork the repository and clone it locally.
 2. Install a **SQL Server** instance you can reach with Windows authentication.
 3. Restore the Microsoft **AdventureWorks2022** sample database on that instance. Warehouse load and rebuild scripts assume it already exists.
-4. Open the version folder you intend to change (today that is `Version1/`). Each version folder is self-contained.
+4. Open the version folder you intend to change. **Version 1** (`Version1/`) is the implemented warehouse and semantic layer. **Version 2** (`Version2/`) is in progress (SSIS and Power BI); do not treat placeholder folders as completed packages or reports. Each version folder is self-contained.
 
 Connect with Windows authentication. Example (adjust the instance name if yours is not `.\SQL2022`):
 
@@ -21,7 +21,7 @@ Do not add passwords, tokens, or credentialed connection strings to any file.
 
 ## Repository layout
 
-The root README is an index. **Each version lives in its own top-level folder** (for example `Version1/`). A version folder’s contents describe **that version only**. Do not mix objects or documentation from one version into another.
+The root README is an index. **Each version lives in its own top-level folder** (`Version1/`, `Version2/`, …). A version folder’s contents describe **that version only**. Do not mix objects or documentation from one version into another.
 
 Typical contents of a version folder:
 
@@ -105,4 +105,4 @@ Use the GitHub issue templates for bugs and feature requests. Include the versio
 
 ## Questions
 
-Start with [README.md](README.md) and [Version1/README.md](Version1/README.md) for the current version’s objects and rebuild steps.
+Start with [README.md](README.md) and [Version1/README.md](Version1/README.md) for the implemented warehouse and rebuild steps. See [Version2/README.md](Version2/README.md) for Version 2 status (in progress).
