@@ -1,0 +1,55 @@
+# SQL Server
+*.bak
+*.trn
+*.mdf
+*.ldf
+*.ndf
+*.bakx
+*.sqlproj.user
+
+# Local / inspection dumps
+_meta/
+
+# Visual Studio / SSMS
+.vs/
+*.user
+*.suo
+*.rsuser
+*.ssmssln
+*.ssmsproj
+
+# Build / output
+bin/
+obj/
+out/
+dist/
+
+# Logs and temp
+*.log
+*.tmp
+*.temp
+~*
+Thumbs.db
+Desktop.ini
+
+# Secrets and local config
+.env
+.env.*
+*.pfx
+*.snk
+appsettings.*.local.json
+**/connectionstrings*.json
+**/secrets.json
+
+# Python (local helpers, if any)
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Power BI local caches
+*.pbix.lock
+.pbi/
+
+# OS
+.DS_Store
